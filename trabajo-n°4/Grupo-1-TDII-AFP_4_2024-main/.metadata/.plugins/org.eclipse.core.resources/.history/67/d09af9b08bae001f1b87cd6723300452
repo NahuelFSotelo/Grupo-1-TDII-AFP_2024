@@ -1,0 +1,83 @@
+/*
+ * API_debounce.c
+ *
+ *  Created on: Nov 29, 2024
+ *      Author: Nahue
+ */
+#include "API_debounce.h"
+#include "API_GPIO.h"
+#include "main.h"
+/////////////////variables////////////////////////////////
+  static debounceState_t currentState; // Estado actual de la MEF
+
+ ////////////////////logica funciones/////////////////////////////////////////
+  /**
+   * @brief Inicializa la MEF de debounce.
+   */
+  void debounceFSM_init(delay_t *delay_t) {
+      currentState = BUTTON_UP;        // Cargar el estado inicial
+      DelayGPIO_Iniciar(&delay_t, 40);   // Configurar retardo de 40 ms
+      writeLedOff_GPIO(LD1_Pin);   // Inicializar LED1 apagado
+      writeLedOff_GPIO(LD1_Pin);         // Inicializar LED3 apagado
+
+  }
+  /**
+   * @brief Invierte el estado del LED1 al detectar el botón presionado.
+   */
+  void buttonPressed(void) {
+	  toggleLed_GPIO(LD1_Pin); // Invertir el estado del LED1
+  }
+  /**
+   * @brief Invierte el estado del LED3 al detectar el botón liberado.
+   */
+  void buttonReleased(void) {
+	  toggleLed_GPIO(LD1_Pin); // Invertir el estado del LED3
+  }
+  /**
+   * @brief Actualiza la lógica de la MEF de debounce.
+   */
+  void debounceFSM_update(delay_t *delay_t) {
+      bool readButton = readButton_GPIO(); // Leer el estado del botón
+
+      switch (currentState) {
+      case BUTTON_UP:
+          if (readButton) {
+              currentState = BUTTON_FALLING;
+              DelayGPIO_Iniciar(&delay_t); // Reiniciar el retardo
+          }
+          break;
+
+      case BUTTON_FALLING:
+          if (DelayGPIO_NoBloqueante(&delay_t)) { // Esperar 40 ms
+              if (readButton) {
+                  currentState = BUTTON_DOWN;
+                  buttonPressed(); // Confirmar botón presionado
+              } else {
+                  currentState = BUTTON_UP;
+              }
+          }
+          break;
+
+      case BUTTON_DOWN:
+          if (!readButton) {
+              currentState = BUTTON_RISING;
+              DelayGPIO_Iniciar(&delay_t); // Reiniciar el retardo
+          }
+          break;
+
+      case BUTTON_RISING:
+          if (DelayGPIO_NoBloqueante(&delay_t)) { // Esperar 40 ms
+              if (!readButton) {
+                  currentState = BUTTON_UP;
+                  buttonReleased(); // Confirmar botón liberado
+              } else {
+                  currentState = BUTTON_DOWN;
+              }
+          }
+          break;
+
+      default:
+          debounceFSM_init(); // Reiniciar MEF en caso de error
+          break;
+      }
+  }

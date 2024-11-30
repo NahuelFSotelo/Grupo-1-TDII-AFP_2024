@@ -1,0 +1,116 @@
+/*
+ * API_debounce.c
+ *
+ *  Created on: Nov 29, 2024
+ *      Author: Nahue
+ */
+#include "API_debounce.h"
+#include "API_GPIO.h"
+#include "main.h"
+#include <stdbool.h>
+/////////////////variables////////////////////////////////
+static debounceState_t currentState; // Estado actual de la MEF
+static bool keyPressed = false; // Variable estática para almacenar el estado de la tecla
+
+delay_t debounceDelay;
+
+
+////////////////////logica funciones/////////////////////////////////////////
+/**
+ * @brief Inicializa la MEF de debounce.
+ */
+void debounceFSM_init(void) {
+	currentState = BUTTON_UP;        // Cargar el estado inicial
+	DelayGPIO_Iniciar(&debounceDelay, 40);   // Configurar retardo de 40 ms
+//	writeLedOff_GPIO(LD1_Pin);   // Inicializar LED1 apagado
+//	writeLedOff_GPIO(LD3_Pin);         // Inicializar LED3 apagado
+
+}
+/**
+ * @brief Lee el estado de la tecla y lo resetea si fue presionada.
+ *
+ * Esta función verifica si una tecla fue presionada, devolviendo `true` en tal caso.
+ * Si devuelve `true`, también resetea el estado de la tecla (lo pone en `false`).
+ * Si no fue presionada, devuelve `false` y no realiza cambios en el estado.
+ *
+ * @return true Si la tecla fue presionada.
+ * @return false Si la tecla no fue presionada.
+ */
+bool readKey() {
+    if (keyPressed) {
+        // Si la tecla fue presionada, devolver true y resetear el estado
+        keyPressed = false;
+       // toggleLed_GPIO(LD2_Pin); // Encender LED2
+        return true;
+
+
+    }
+    // Si la tecla no fue presionada, devolver false
+    return false;
+
+}
+
+/**
+ * @brief Invierte el estado del LED1 al detectar el botón presionado.
+ */
+void buttonPressed(void) {
+	//toggleLed_GPIO(LD1_Pin); // Invertir el estado del LED1
+	keyPressed = true;     // Actualizar la variable interna
+}
+/**
+ * @brief Invierte el estado del LED3 al detectar el botón liberado.
+ */
+void buttonReleased(void) {
+	//toggleLed_GPIO(LD3_Pin); // Invertir el estado del LED3
+}
+
+/**
+ * @brief Actualiza la lógica de la MEF de debounce.
+ */
+void debounceFSM_update() {
+	bool readButton = readButton_GPIO(); // Leer el estado del botón
+	readKey();
+
+	switch (currentState) {
+	case BUTTON_UP:
+		if (readButton) {
+			currentState = BUTTON_FALLING;
+			DelayGPIO_Iniciar(&debounceDelay, 40); // Reiniciar el retardo
+		}
+		break;
+
+	case BUTTON_FALLING:
+		if (DelayGPIO_NoBloqueante(&debounceDelay)) { // Esperar 40 ms
+			if (readButton) {
+				currentState = BUTTON_DOWN;
+				buttonPressed(); // Confirmar botón presionado
+
+			} else {
+				currentState = BUTTON_UP;
+			}
+		}
+		break;
+
+	case BUTTON_DOWN:
+		if (!readButton) {
+			currentState = BUTTON_RISING;
+			DelayGPIO_Iniciar(&debounceDelay, 40); // Reiniciar el retardo
+		}
+		break;
+
+	case BUTTON_RISING:
+		if (DelayGPIO_NoBloqueante(&debounceDelay)) { // Esperar 40 ms
+			if (!readButton) {
+				currentState = BUTTON_UP;
+				buttonReleased(); // Confirmar botón liberado
+			} else {
+				currentState = BUTTON_DOWN;
+			}
+		}
+		break;
+
+	default:
+		debounceFSM_init(); // Reiniciar MEF en caso de error
+		break;
+	}
+}

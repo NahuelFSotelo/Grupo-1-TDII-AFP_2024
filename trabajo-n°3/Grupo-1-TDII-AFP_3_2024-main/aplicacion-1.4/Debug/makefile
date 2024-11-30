@@ -61,8 +61,8 @@ all: main-build
 main-build: aplicacion-1.4.elf secondary-outputs
 
 # Tool invocations
-aplicacion-1.4.elf aplicacion-1.4.map: $(OBJS) $(USER_OBJS) E:\tecnicas\ digitales\ 2\entrega2\aplicacion-1.4\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "aplicacion-1.4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\entrega2\aplicacion-1.4\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-1.4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+aplicacion-1.4.elf aplicacion-1.4.map: $(OBJS) $(USER_OBJS) E:\tecnicas\ digitales\ 2\entrega\ final\trabajo-n°3\Grupo-1-TDII-AFP_3_2024-main\aplicacion-1.4\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "aplicacion-1.4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\entrega final\trabajo-n°3\Grupo-1-TDII-AFP_3_2024-main\aplicacion-1.4\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-1.4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

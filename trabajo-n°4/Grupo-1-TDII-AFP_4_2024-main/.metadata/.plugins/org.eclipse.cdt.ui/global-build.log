@@ -1,0 +1,111 @@
+01:33:43 **** Incremental Build of configuration Debug for project aplicacion-4 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"E:/tecnicas digitales 2/practica4/aplicacion-4/Drivers/API/Inc" -I"E:/tecnicas digitales 2/practica4/aplicacion-4/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "aplicacion-4.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica4\aplicacion-4\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: aplicacion-4.elf
+ 
+arm-none-eabi-size  aplicacion-4.elf 
+arm-none-eabi-objdump -h -S aplicacion-4.elf  > "aplicacion-4.list"
+   text	   data	    bss	    dec	    hex	filename
+  13428	     12	   3468	  16908	   420c	aplicacion-4.elf
+Finished building: default.size.stdout
+ 
+Finished building: aplicacion-4.list
+ 
+01:34:11 **** Incremental Build of configuration Debug for project aplicacion-3 ****
+make -j12 all 
+arm-none-eabi-size  aplicacion-3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14132	     12	   3468	  17612	   44cc	aplicacion-3.elf
+Finished building: default.size.stdout
+ 
+01:34:34 **** Incremental Build of configuration Debug for project aplicacion-4 ****
+make -j12 all 
+arm-none-eabi-gcc -o "aplicacion-4.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica4\aplicacion-4\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: aplicacion-4.elf
+ 
+arm-none-eabi-size  aplicacion-4.elf 
+arm-none-eabi-objdump -h -S aplicacion-4.elf  > "aplicacion-4.list"
+   text	   data	    bss	    dec	    hex	filename
+  13428	     12	   3468	  16908	   420c	aplicacion-4.elf
+Finished building: default.size.stdout
+ 
+Finished building: aplicacion-4.list
+ 
+01:34:37 **** Incremental Build of configuration Debug for project aplicacion-4 ****
+make -j12 all 
+arm-none-eabi-size  aplicacion-4.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13428	     12	   3468	  16908	   420c	aplicacion-4.elf
+Finished building: default.size.stdout
+ 
+01:37:12 **** Incremental Build of configuration Debug for project aplicacion-4 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"E:/tecnicas digitales 2/practica4/aplicacion-4/Drivers/API/Inc" -I"E:/tecnicas digitales 2/practica4/aplicacion-4/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "aplicacion-4.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica4\aplicacion-4\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: aplicacion-4.elf
+ 
+arm-none-eabi-size  aplicacion-4.elf 
+arm-none-eabi-objdump -h -S aplicacion-4.elf  > "aplicacion-4.list"
+   text	   data	    bss	    dec	    hex	filename
+  13472	     12	   3468	  16952	   4238	aplicacion-4.elf
+Finished building: default.size.stdout
+ 
+Finished building: aplicacion-4.list
+ 
+01:39:23 **** Incremental Build of configuration Debug for project aplicacion-4 ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"E:/tecnicas digitales 2/practica4/aplicacion-4/Drivers/API/Inc" -I"E:/tecnicas digitales 2/practica4/aplicacion-4/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_debounce.d" -MT"Drivers/API/Src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_debounce.o"
+arm-none-eabi-gcc -o "aplicacion-4.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica4\aplicacion-4\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: aplicacion-4.elf
+ 
+arm-none-eabi-size  aplicacion-4.elf 
+arm-none-eabi-objdump -h -S aplicacion-4.elf  > "aplicacion-4.list"
+   text	   data	    bss	    dec	    hex	filename
+  13468	     12	   3468	  16948	   4234	aplicacion-4.elf
+Finished building: default.size.stdout
+ 
+Finished building: aplicacion-4.list
+ 
+01:43:01 **** Incremental Build of configuration Debug for project aplicacion-4 ****
+make -j12 all 
+arm-none-eabi-size  aplicacion-4.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13468	     12	   3468	  16948	   4234	aplicacion-4.elf
+Finished building: default.size.stdout
+ 
+01:43:43 **** Incremental Build of configuration Debug for project aplicacion-3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"E:/tecnicas digitales 2/practica4/aplicacion-3/Drivers/API/Inc" -I"E:/tecnicas digitales 2/practica4/aplicacion-3/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "aplicacion-3.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica4\aplicacion-3\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: aplicacion-3.elf
+ 
+arm-none-eabi-size  aplicacion-3.elf 
+arm-none-eabi-objdump -h -S aplicacion-3.elf  > "aplicacion-3.list"
+   text	   data	    bss	    dec	    hex	filename
+  14128	     12	   3468	  17608	   44c8	aplicacion-3.elf
+Finished building: default.size.stdout
+ 
+Finished building: aplicacion-3.list
+ 
+01:45:31 **** Build of configuration Debug for project aplicacion-1.1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/API/Src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"E:/tecnicas digitales 2/practica4/aplicacion-1.1/Drivers/API/Inc" -I"E:/tecnicas digitales 2/practica4/aplicacion-1.1/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/API_debounce.d" -MT"Drivers/API/Src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/API_debounce.o"
+arm-none-eabi-gcc -o "aplicacion-1.1.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica4\aplicacion-1.1\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-1.1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: aplicacion-1.1.elf
+ 
+arm-none-eabi-size  aplicacion-1.1.elf 
+arm-none-eabi-objdump -h -S aplicacion-1.1.elf  > "aplicacion-1.1.list"
+   text	   data	    bss	    dec	    hex	filename
+  12876	     12	   3452	  16340	   3fd4	aplicacion-1.1.elf
+Finished building: default.size.stdout
+ 
+Finished building: aplicacion-1.1.list
+ 
+01:47:16 **** Build of configuration Debug for project aplicacion-2 ****
+make -j12 all 
+arm-none-eabi-size  aplicacion-2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13496	     12	   3468	  16976	   4250	aplicacion-2.elf
+Finished building: default.size.stdout
+ 

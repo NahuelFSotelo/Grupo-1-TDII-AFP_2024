@@ -1,0 +1,7 @@
+../Drivers/API/Src/API_GPIO.c:26:6:MX_GPIO_Init	1
+../Drivers/API/Src/API_GPIO.c:82:6:writeLedOn_GPIO	1
+../Drivers/API/Src/API_GPIO.c:90:6:writeLedOff_GPIO	1
+../Drivers/API/Src/API_GPIO.c:98:6:toggleLed_GPIO	1
+../Drivers/API/Src/API_GPIO.c:106:16:readButton_GPIO	1
+../Drivers/API/Src/API_GPIO.c:111:6:DelayGPIO_Iniciar	1
+../Drivers/API/Src/API_GPIO.c:118:6:DelayGPIO_NoBloqueante	3
