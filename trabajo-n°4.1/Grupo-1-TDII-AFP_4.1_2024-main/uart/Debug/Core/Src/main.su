@@ -1,0 +1,7 @@
+../Core/Src/main.c:101:8:debounceFSM_init	24	static
+../Core/Src/main.c:72:5:main	80	static
+../Core/Src/main.c:111:8:buttonPressed	24	static
+../Core/Src/main.c:119:8:buttonReleased	24	static
+../Core/Src/main.c:126:8:debounceFSM_update	32	static
+../Core/Src/main.c:200:6:SystemClock_Config	88	static
+../Core/Src/main.c:337:6:Error_Handler	4	static,ignoring_inline_asm
