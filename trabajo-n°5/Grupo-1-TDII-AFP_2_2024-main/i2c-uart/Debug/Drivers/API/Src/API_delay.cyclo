@@ -1,0 +1,2 @@
+../Drivers/API/Src/API_delay.c:20:6:DelayGPIO_Iniciar	1
+../Drivers/API/Src/API_delay.c:27:6:DelayGPIO_NoBloqueante	3

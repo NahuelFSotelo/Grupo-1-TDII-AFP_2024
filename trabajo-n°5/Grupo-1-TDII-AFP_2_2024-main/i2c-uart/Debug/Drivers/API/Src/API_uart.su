@@ -1,0 +1,7 @@
+../Drivers/API/Src/API_uart.c:30:6:uartSendConfig	392	static
+../Drivers/API/Src/API_uart.c:68:6:MX_USART2_UART_Init	8	static
+../Drivers/API/Src/API_uart.c:96:6:uartSendString	24	static
+../Drivers/API/Src/API_uart.c:104:6:uartSendStringSize	24	static
+../Drivers/API/Src/API_uart.c:112:6:uartReceiveStringSize	24	static
+../Drivers/API/Src/API_uart.c:121:6:HAL_UART_RxCpltCallback	16	static
+../Drivers/API/Src/API_uart.c:138:10:uartGetReceivedData	4	static
