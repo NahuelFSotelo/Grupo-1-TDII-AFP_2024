@@ -40,7 +40,7 @@ led_t LDx;
     HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
 
     /*Configure GPIO pin Output Level */
-    HAL_GPIO_WritePin(GPIOE, Rele3_Pin|Rele1_Pin|Rele2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOE, rele1_Pin|rele2_Pin|rele3_Pin, GPIO_PIN_SET);
 
     /*Configure GPIO pin Output Level */
     HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
@@ -74,8 +74,8 @@ led_t LDx;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-    /*Configure GPIO pins : Rele3_Pin Rele1_Pin Rele2_Pin */
-    GPIO_InitStruct.Pin = Rele3_Pin|Rele1_Pin|Rele2_Pin;
+    /*Configure GPIO pins : rele1_Pin rele2_Pin rele3_Pin */
+    GPIO_InitStruct.Pin = rele1_Pin|rele2_Pin|rele3_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -88,6 +88,14 @@ led_t LDx;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
     HAL_GPIO_Init(RMII_TXD1_GPIO_Port, &GPIO_InitStruct);
+
+    /*Configure GPIO pins : STLK_RX_Pin STLK_TX_Pin */
+    GPIO_InitStruct.Pin = STLK_RX_Pin|STLK_TX_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF7_USART3;
+    HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
     /*Configure GPIO pin : USB_PowerSwitchOn_Pin */
     GPIO_InitStruct.Pin = USB_PowerSwitchOn_Pin;

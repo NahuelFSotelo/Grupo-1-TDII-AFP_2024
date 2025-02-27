@@ -13,7 +13,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 /*Exported types*******************************************************************************/
- typedef uint16_t led_t; /* importante que el tipo se uint16_t, si no, no funciona LD3_Pin */
+ typedef uint16_t led_t;/* importante que el tipo se uint16_t, si no, no funciona LD3_Pin */
  typedef bool buttonStatus_t , bool_t;// Tipos para botones y valores booleanos
  typedef uint32_t delay_gpio_t; // Tipo para almacenar el tiempo en ticks
  /*Exported functions prototypes **************************************************************/

@@ -35,34 +35,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := i2c-uart
+BUILD_ARTIFACT_NAME := adc
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-i2c-uart.elf \
+adc.elf \
 
 MAP_FILES += \
-i2c-uart.map \
+adc.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-i2c-uart.list \
+adc.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: i2c-uart.elf secondary-outputs
+main-build: adc.elf secondary-outputs
 
 # Tool invocations
-i2c-uart.elf i2c-uart.map: $(OBJS) $(USER_OBJS) E:\tecnicas\ digitales\ 2\practica\ 5\cod\i2c-uart\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "i2c-uart.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica 5\cod\i2c-uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="i2c-uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+adc.elf adc.map: $(OBJS) $(USER_OBJS) E:\tecnicas\ digitales\ 2\practica\ 5\cod\adc\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "adc.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\practica 5\cod\adc\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,14 +71,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-i2c-uart.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "i2c-uart.list"
+adc.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "adc.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout i2c-uart.elf i2c-uart.list i2c-uart.map
+	-$(RM) adc.elf adc.list adc.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

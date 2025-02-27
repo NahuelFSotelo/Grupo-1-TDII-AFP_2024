@@ -29,15 +29,17 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/i2c-lcd.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_GPIO.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_uart.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_debounce.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_delay.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_adc.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_uart.h \
- E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_i2c.h
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/i2c-lcd.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_GPIO.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_uart.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_debounce.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_delay.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_adc.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_uart.h \
+ E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_i2c.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -69,12 +71,14 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/i2c-lcd.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_GPIO.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_uart.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_debounce.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_delay.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_adc.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_uart.h:
-E:/tecnicas\ digitales\ 2/practica\ 5/cod/i2c-uart/Drivers/API/Inc/API_i2c.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/i2c-lcd.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_GPIO.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_uart.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_debounce.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_delay.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_adc.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_uart.h:
+E:/tecnicas\ digitales\ 2/practica\ 5/cod/adc/Drivers/API/Inc/API_i2c.h:
